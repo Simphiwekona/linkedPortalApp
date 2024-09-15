@@ -1,0 +1,26 @@
+<div class="header">
+  <h2>Account Verification</h2>
+</div>
+<div class="body">
+  <form (ngSubmit)="verify()">
+    <input
+      type="email"
+      placeholder="Email"
+      id="email"
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
+    <br />
+    <input
+      type="text"
+      placeholder="OTP code"
+      id="email"
+      [(ngModel)]="verificationCode"
+      name="verificationCode"
+      required
+    />
+    <br />
+    <button type="submit" class="success-btn">Verify</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+.container {
+    width: 30%;
+    margin: 0 auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.header h2 {
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #03383e;
+    margin: 30px auto;
+}
+.success-btn {
+    background: #03383e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px 40px;
+    width: 80%;
+}
+.success-btn:hover {
+    color: #000;
+    background: #fff;
+}
+input {
+    width: 80%;
+    height: 30px;
+    margin: 5px 40px;
+    border-radius: 10px;
+    border: 1px solid grey;
+
+    font-size: bolder;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="header">
+        <h2>Login</h2>
+    </div>
+    <div class="body">
+        <form (ngSubmit)="login()">
+            <input type="email" placeholder="Username" [(ngModel)]="email" id="email" class="fill-input" name="email" required>
+            <br>
+            <input type="password" placeholder="Password" id="password" [(ngModel)]="password" class="fill-input" name="password" required>
+            <br>
+            <button type="submit" class="success-btn">Login</button>
+        </form>
+    </div>
+    <div class="footer">
+        <a (click)="openOtpDialog()">Verify Account</a>
+        <br>
+        <a routerLink="/signup">Create new account</a>
+    </div>
+</div>
