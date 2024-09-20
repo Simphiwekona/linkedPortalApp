@@ -1,34 +1,68 @@
+/* Container centered and mobile-friendly */
 .container {
     width: 30%;
-    margin: 0 auto;
+    margin: 10% auto; /* Center vertically and horizontally */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.header h2 {
-    text-align: center;
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
 }
 
-.footer a {
-    text-decoration: none;
-    color: #03383e;
-    margin: 30px auto;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Adjust width for smaller screens */
+    }
 }
+
+.header h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+input {
+    width: 80%;
+    height: 40px; /* Increase input field height */
+    margin: 10px 10%; /* Center inputs */
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 5px; /* Add padding inside the input */
+}
+
+/* Styling the button */
 .success-btn {
     background: #03383e;
     color: #fff;
     border: none;
     border-radius: 10px;
     padding: 15px 20px;
-    margin: 10px 40px;
+    margin: 20px 10%; /* Center the button */
     width: 80%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
 }
+
 .success-btn:hover {
     color: #000;
     background: #fff;
+    border: 1px solid #03383e;
 }
-input {
-    width: 80%;
-    height: 30px;
-    margin: 5px 40px;
-    border-radius: 10px;
-    border: 1px solid grey;
+
+/* Footer links centered */
+.footer {
+    text-align: center;
+    margin-top: 20px; /* Space above the footer */
+}
+
+.footer a {
+    text-decoration: none;
+    color: #03383e;
+    margin: 0 10px; /* Space between links */
+    display: inline-block;
+    font-size: 14px;
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
 }

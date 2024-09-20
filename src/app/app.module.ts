@@ -14,13 +14,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SignupComponent } from './components/signup/signup.component';
 import { OTPComponent } from './components/dialogs/otp/otp.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     SignupComponent,
-    OTPComponent
+    OTPComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

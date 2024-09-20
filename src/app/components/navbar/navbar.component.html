@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="nav-brand">
+      <a routerLink="/">MyBrand</a>
+    </div>
+    
+    <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/services">Services</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+    
+    <div class="nav-logout" [ngClass]="{'active': isMenuOpen}">
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+    
+    <!-- Hamburger icon -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  
