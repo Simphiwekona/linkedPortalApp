@@ -15,6 +15,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SignupComponent } from './components/signup/signup.component';
 import { OTPComponent } from './components/dialogs/otp/otp.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+// import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +39,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    BrowserAnimationsModule, // Required for Material animations
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTableModule,  // <-- Import MatTableModule here
+    // ChartsModule
   ],
   providers: [
     provideAnimationsAsync()
