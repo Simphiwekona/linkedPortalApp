@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   isMenuOpen = false;
 
+  constructor(private route:Router){}
+
   // Function to toggle the menu open/close
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -16,6 +19,7 @@ export class NavbarComponent {
   // Logout logic
   logout() {
     // Your logout functionality goes here
+    this.route.navigate(['/login']);
     console.log('Logged out');
   }
 

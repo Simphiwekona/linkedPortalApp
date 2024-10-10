@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-
+import { UsersService } from '../../service/users.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddUserComponent } from '../add-user/add-user.component';
+ 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -21,4 +24,23 @@ export class DashboardComponent {
   ];
 
   displayedColumns: string[] = ['user', 'country', 'usage', 'lastLogin'];
+
+  users: any[] = [];
+
+  constructor(private userService: UsersService, 
+    private dialog:MatDialog
+  ){}
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe(data => {
+      this.users = data;
+    });   
+  }
+
+  openDialog(): void {
+    this.dialog.open(AddUserComponent, {
+      width: '700px',
+      height: '500px'
+    });
+  }
 }

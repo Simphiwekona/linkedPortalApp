@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -20,6 +20,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { MatStepperModule } from '@angular/material/stepper';
+
 // import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -29,7 +33,8 @@ import { MatTableModule } from '@angular/material/table';
     DashboardComponent,
     SignupComponent,
     OTPComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +45,14 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     MatSnackBarModule,
     MatDialogModule,
-    BrowserAnimationsModule, // Required for Material animations
+    BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule,  // <-- Import MatTableModule here
-    // ChartsModule
+    MatTableModule,
+    MatStepperModule,  
+    MatExpansionModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideAnimationsAsync()
