@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -23,6 +23,11 @@ import { MatTableModule } from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import {SharedModule} from "../shared/shared.module";
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.service';
 
 // import { ChartsModule } from 'ng2-charts';
 
@@ -38,7 +43,7 @@ import { MatStepperModule } from '@angular/material/stepper';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     MatInputModule,
@@ -50,12 +55,17 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
-    MatStepperModule,  
+    MatStepperModule,
     MatExpansionModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    MatIconModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

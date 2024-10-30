@@ -1,26 +1,41 @@
 /* dashboard.component.scss */
 .dashboard {
-    background-color: #1f1f2e;
-    color: #fff;
-  }
-  
-  .mat-card {
-    background-color: #2a2a3c;
-    color: #fff;
-    padding: 15px;
-  }
-  
-  .text-danger {
-    color: red;
-  }
-  
-  .text-success {
-    color: green;
-  }
-  .left-panel {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    top: 30px;
-  }
-  ul { list-style-type: none;}
+  background-color: #1f1f2e;
+  color: #fff;
+}
+
+.mat-card {
+  background-color: #2a2a3c;
+  color: #fff;
+  padding: 15px;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-success {
+  color: green;
+}
+
+.left-panel {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  top: 30px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center-container {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  top: 30px;
+  left: 50px;
+}
+.container {
+  display: flex;
+}

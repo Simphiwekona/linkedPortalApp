@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UsersService } from '../../service/users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
- 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -23,18 +23,18 @@ export class DashboardComponent {
     { name: 'Avram Tarasios', country: 'Brazil', usage: '50%', lastLogin: '5 minutes ago' }
   ];
 
-  displayedColumns: string[] = ['user', 'country', 'usage', 'lastLogin'];
+  displayedColumns: string[] = ['id', 'quoteNo', 'date', 'status', 'action'];
 
   users: any[] = [];
 
-  constructor(private userService: UsersService, 
+  constructor(private userService: UsersService,
     private dialog:MatDialog
   ){}
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(data => {
       this.users = data;
-    });   
+    });
   }
 
   openDialog(): void {

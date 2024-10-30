@@ -4,16 +4,37 @@
     align-items: flex-start;
     padding: 16px 0;
   }
-  
+
   /* Style the label to be on the left */
   .step-label {
     width: 150px; /* Set the width of the label column */
     font-weight: bold;
     padding-right: 16px;
   }
-  
+
   /* Style the content to be on the right */
   .step-content {
     flex-grow: 1;
   }
-  
+.row {
+  display: flex;
+  gap: 16px; /* Adjust the space between the fields as needed */
+  margin-bottom: 16px; /* Space between the rows */
+}
+
+.row > ng-container {
+  flex: 1; /* Make each form field take equal space */
+}
+
+.userInfo {
+  max-width: 800px; /* Optional: limit form width */
+  margin: 0 auto;   /* Center the form */
+  padding: 16px;
+  /*background-color: #f9f9f9;*/
+  /*border-radius: 8px;*/
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+mat-form-field {
+  width: 100%;
+}
