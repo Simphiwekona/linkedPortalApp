@@ -39,3 +39,15 @@ ul {
 .container {
   display: flex;
 }
+.success-btn {
+  position: sticky;
+  right: 0;
+  background: #03383e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}

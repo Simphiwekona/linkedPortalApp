@@ -61,7 +61,9 @@ import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.ser
     SharedModule,
     MatIconModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule, 
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync(),

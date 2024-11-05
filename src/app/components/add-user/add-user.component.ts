@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {SuccessfulDialogComponent} from "../../../shared/successful-dialog/successful-dialog.component";
 import {SuccessService} from "../../../shared/success.service";
+import { Client } from '../../model/client.model';
+import { UsersService } from '../../service/users.service';
 
 @Component({
   selector: 'app-add-user',
@@ -17,7 +19,8 @@ export class AddUserComponent {
   constructor(public dialogRef: MatDialogRef<AddUserComponent>,
     private _formBuilder: FormBuilder,
     private dialog: MatDialog,
-    private successfulDialog: SuccessService
+    private successfulDialog: SuccessService,
+    private userService: UsersService
   ) {
     this.addingClients();
   }
@@ -28,14 +31,15 @@ export class AddUserComponent {
 
   addingClients(){
     this.clientsForm = this._formBuilder.group({
-      name: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      mobile: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      street: new FormControl('', Validators.required),
+      clientName: new FormControl('', Validators.required),
+      clientLastName: new FormControl('', Validators.required),
+      clientNumber: new FormControl('', Validators.required),
+      clientEmail: new FormControl('', Validators.required),
+      streetAddress: new FormControl('', Validators.required),
       suburb: new FormControl('', Validators.required),
       province: new FormControl('', Validators.required),
       postalCode: new FormControl('', Validators.required),
+      typeOfClient: new FormControl('', Validators.required)
     });
   }
   addingUser(){
@@ -49,9 +53,16 @@ export class AddUserComponent {
   clientsFormSubmit(){
     if (this.clientsForm.valid)
     {
-      this.successfulDialog.openSuccessDialog('Client Successful Added',
-        'The client information has been saved successfully. You can now view or edit the details.')
-      console.log('Form Submitted', this.clientsForm.value)
+      const newClient: Client = this.clientsForm.value;
+      this.userService.createClient(newClient).subscribe({
+        next: (newClient) => {
+          this.successfulDialog.openSuccessDialog('Client Successful Added',
+            'The client information has been saved successfully. You can now view or edit the details.')
+        },
+        error: (error) => {
+          console.error('Error creating client', error);
+        }
+      })
     }
   }
 }

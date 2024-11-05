@@ -14,6 +14,7 @@ export class LoginComponent {
 
   email = '';
   password = '';
+  errorMessage: string | null =  null;
 
   constructor(private authService: AuthService, 
     private router: Router, 
@@ -36,8 +37,8 @@ export class LoginComponent {
 
         this.router.navigate(['/dashboard'])
 
-      }, error => {
-        this.snackbar.open('Login failed' , 'Close', {
+      }, (error: any) => {       
+        this.snackbar.open(error.errorMessage || 'Login failed' , 'Close', {
           duration: 3000,
           horizontalPosition: 'right',
           verticalPosition: 'top',
