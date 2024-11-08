@@ -1,0 +1,11 @@
+<div class="div" *ngIf="quotations">
+     <div class="client-info">
+    <p><span>Client Name : </span><span>{{quotations.client.clientName}}</span></p>
+    <p><span>Client Email : </span><span>{{quotations.client.clientEmail}}</span></p>
+    <p><span>Client Number : </span><span>{{quotations.client.clientNumber}}</span></p>
+    
+     </div>
+
+     <button (click)="downloadPDF()">Download PDF</button>
+     <button>Send PDF</button>
+</div>

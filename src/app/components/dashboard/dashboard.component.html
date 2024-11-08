@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-    <div class="left-panel">
+    <!-- <div class="left-panel">
         <mat-card>
                 <mat-card-header>
                   <h2>Add Client</h2>
@@ -15,7 +15,7 @@
                  </mat-action-row>
                 </mat-card-content>
         </mat-card>
-    </div>
+    </div> -->
   <div class="center-container">
     <div class="header">
       <h4>Quotation</h4>
@@ -54,7 +54,7 @@
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef> Action </th>
           <td mat-cell *matCellDef="let quotation">
-            <button mat-button color="primary">View</button>
+            <button mat-button color="primary" (click)="openViewQuotationDialog(quotation.quoteId)">View</button>
           </td>
         </ng-container>
     

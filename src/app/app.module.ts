@@ -28,7 +28,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.service';
-
+import { QuotationsModule } from './components/quotations/quotations.module';
 // import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -39,7 +39,7 @@ import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.ser
     SignupComponent,
     OTPComponent,
     NavbarComponent,
-    AddUserComponent
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +63,8 @@ import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.ser
     MatSortModule,
     MatPaginatorModule,
     MatCardModule, 
-    MatTableModule
+    MatTableModule,
+    QuotationsModule
   ],
   providers: [
     provideAnimationsAsync(),

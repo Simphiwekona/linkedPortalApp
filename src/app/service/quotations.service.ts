@@ -16,4 +16,13 @@ export class QuotationsService {
   getAllQuotes(): Observable<Quote[]>{
     return this.http.get<Quote[]>(`${this.apiURL}/all`)
   }
+  getQuoteById(quotationId: number): Observable<Quote>{
+    return this.http.get<Quote>(`${this.apiURL}/quote/${quotationId}`);
+  }
+  downloadQuotation(quotationId: number): Observable<Blob> {
+    return this.http.get(`${this.apiURL}/download-pdf?quotationId=${quotationId}`, {
+      responseType: 'blob' // Ensure response type is 'blob'
+    });
+  }
+  
 }

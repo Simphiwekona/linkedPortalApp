@@ -5,6 +5,7 @@ import { AddUserComponent } from '../add-user/add-user.component';
 import { Client } from '../../model/client.model';
 import { Quote } from '../../model/quote.model';
 import { QuotationsService } from '../../service/quotations.service';
+import { ViewQuotaionComponent } from '../quotations/view-quotaion/view-quotaion.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -80,6 +81,13 @@ export class DashboardComponent {
       width: '700px',
       height: '500px',
     });
+  }
+  openViewQuotationDialog(id:string){
+    this.dialog.open(ViewQuotaionComponent, {
+      width: "700px",
+      height: "500px",
+      data: {id}
+    })
   }
   editDialog() {}
 }
