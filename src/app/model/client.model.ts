@@ -3,10 +3,10 @@ export interface Client {
     clientLastName: string;
     clientEmail: string;
     clientNumber: string;
-    streetAddress: string;
-    suburb: string;
-    postalCode: string;
-    province: string;
-    typeOfClient?: string;
+    clientAddress: string;
+    clientCity: string;
+    clientZip: string;
+    clientState: string;
+    clientType?: string;
   }
   

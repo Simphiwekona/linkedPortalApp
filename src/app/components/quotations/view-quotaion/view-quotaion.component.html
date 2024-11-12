@@ -1,11 +1,40 @@
-<div class="div" *ngIf="quotations">
-     <div class="client-info">
-    <p><span>Client Name : </span><span>{{quotations.client.clientName}}</span></p>
-    <p><span>Client Email : </span><span>{{quotations.client.clientEmail}}</span></p>
-    <p><span>Client Number : </span><span>{{quotations.client.clientNumber}}</span></p>
-    
-     </div>
-
-     <button (click)="downloadPDF()">Download PDF</button>
-     <button>Send PDF</button>
-</div>
+<mat-card class="quote-card" *ngIf="quotations">
+     <mat-card-header>
+       <mat-card-title>Quote Details</mat-card-title>
+     </mat-card-header>
+     <mat-card-content>
+       <div>
+         <strong>Client Name:</strong> {{ quotations.client.clientName }}
+       </div>
+       <div>
+         <strong>Client Email:</strong> {{ quotations.client.clientEmail }}
+       </div>
+       <div>
+         <strong>Client Number:</strong> {{ quotations.client.clientNumber }}
+       </div>
+       <div>
+         <strong>Client Address:</strong> {{ quotations.client.clientAddress }}, {{ quotations.client.clientCity }}, {{ quotations.client.clientState }} - {{ quotations.client.clientZip }}
+       </div>
+     </mat-card-content>
+   </mat-card>
+   
+   <mat-card class="quote-card">
+     <mat-card-header>
+       <mat-card-title>Product Details</mat-card-title>
+     </mat-card-header>
+     <mat-card-content>
+       <div>
+         <p><strong>Product Name:</strong> {{ quotations?.items?.product?.productName }}</p>
+         <p><strong>Description:</strong> {{ quotations?.items?.description }}</p>
+         <p><strong>Price:</strong> {{ quotations?.items?.price| currency }}</p>
+         <p><strong>Quantity:</strong> {{ quotations?.items?.quantity }}</p>
+         <p><strong>Total:</strong> {{ quotations?.items?.price | currency }}</p>
+       </div>
+     </mat-card-content>
+   </mat-card>
+   
+   <div class="button-container">
+     <button mat-raised-button color="primary" (click)="downloadPDF()">Download PDF</button>
+     <button mat-raised-button color="accent">Send PDF</button>
+   </div>
+   

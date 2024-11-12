@@ -29,6 +29,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.service';
 import { QuotationsModule } from './components/quotations/quotations.module';
+import { SuccessDialogComponent } from './components/dialogs/success-dialog/success-dialog.component';
+import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-dialog.component';
 // import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -40,6 +42,8 @@ import { QuotationsModule } from './components/quotations/quotations.module';
     OTPComponent,
     NavbarComponent,
     AddUserComponent,
+    SuccessDialogComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,

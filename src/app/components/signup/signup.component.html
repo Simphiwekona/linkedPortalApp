@@ -1,21 +1,23 @@
-<div class="container">
-    <div class="header">
-        <h2>Signup</h2>
-    </div>
-    <div class="body">
-        <form (ngSubmit)="signup()" >
-            <input type="username" placeholder="Username" [(ngModel)]="username" id="username" class="fill-input" name="username" required>
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <h2>Signup</h2>
+        </div>
+        <div class="body">
+            <form (ngSubmit)="signup()" >
+                <input type="username" placeholder="Username" [(ngModel)]="username" id="username" class="fill-input" name="username" required>
+                <br>
+                <input type="email" placeholder="Email"  id="email" [(ngModel)]="email" class="fill-input" name="email" required>
+                <br>
+                <input type="password" placeholder="Password" id="password" [(ngModel)]="password"  class="fill-input" name="password" required>
+                <br>
+                <button type="submit" class="success-btn">Sign Up</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="#">Help, I can't signup in</a>
             <br>
-            <input type="email" placeholder="Email"  id="email" [(ngModel)]="email" class="fill-input" name="email" required>
-            <br>
-            <input type="password" placeholder="Password" id="password" [(ngModel)]="password"  class="fill-input" name="password" required>
-            <br>
-            <button type="submit" class="success-btn">Sign Up</button>
-        </form>
-    </div>
-    <div class="footer">
-        <a href="#">Help, I can't signup in</a>
-        <br>
-        <span>Already have a account click </span><a href="#">here</a>
+            <span>Already have a account click </span><a href="#">here</a>
+        </div>
     </div>
 </div>

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { OTPComponent } from '../dialogs/otp/otp.component';
+import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
+import { SuccessDialogComponent } from '../dialogs/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -25,27 +27,15 @@ export class LoginComponent {
     const credentials = {email: this.email, password: this.password}
     this.authService.login(credentials).subscribe(
       response => {
-        // localStorage.setItem('authToken', response.token);
-        // localStorage.setItem('tokenExpiration', response.expirationTime.toString());
+        localStorage.setItem('authToken', response.token);
+        localStorage.setItem('tokenExpiration', response.expirationTime.toString());
 
-        this.snackbar.open('Successfully logged in' , 'Close', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top',
-          panelClass: ['snackbar-success']
-        });
+        this.openSuccessDialog();
 
         this.router.navigate(['/dashboard'])
 
       }, (error: any) => {       
-        this.snackbar.open(error.errorMessage || 'Login failed' , 'Close', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top',
-          panelClass: ['snackbar-error']
-        });
-        
-        console.error ('login failed', error)
+        console.error ('login failed', error);
       }
     )
   }
@@ -55,5 +45,18 @@ export class LoginComponent {
       width: ' 300px'
     })
   }
-
+  openSuccessDialog(){
+    this.dialog.open(SuccessDialogComponent, {
+      data: {
+        message: 'Successfully Registered!'
+      }
+    })
+  }
+  openErrorDialog(errorMessage: string){
+    this.dialog.open(ErrorDialogComponent, {
+      data: {
+        message: {message: errorMessage}
+      }
+    })
+  }
 }

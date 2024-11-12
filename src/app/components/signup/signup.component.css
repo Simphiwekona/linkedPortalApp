@@ -1,17 +1,24 @@
-/* Container centered and mobile-friendly */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 .container {
     width: 30%;
-    margin: 10% auto; /* Center vertically and horizontally */
+    margin: 10% auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    padding: 20px; /* Add padding inside the container */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background */
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
 }
 
-/* Mobile responsiveness */
+
 @media (max-width: 768px) {
     .container {
-        width: 80%; /* Adjust width for smaller screens */
+        width: 80%;
+        box-shadow: none;
+        background-color: #fff;
     }
 }
 
