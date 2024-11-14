@@ -31,6 +31,7 @@ import { HttpErrorInterceptor } from './interceptors/interceptors/http-error.ser
 import { QuotationsModule } from './components/quotations/quotations.module';
 import { SuccessDialogComponent } from './components/dialogs/success-dialog/success-dialog.component';
 import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-dialog.component';
+import { HomeModule } from './components/home/home.module';
 // import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -68,7 +69,8 @@ import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-di
     MatPaginatorModule,
     MatCardModule, 
     MatTableModule,
-    QuotationsModule
+    QuotationsModule,
+    HomeModule
   ],
   providers: [
     provideAnimationsAsync(),

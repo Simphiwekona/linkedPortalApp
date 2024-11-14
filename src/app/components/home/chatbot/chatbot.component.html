@@ -1,0 +1,30 @@
+<div class="container" *ngIf="!toggleChatBot">
+    <div class="chatbox">
+        <div class="bar">
+            <div class="position-container-bar">
+                <div class="status"></div>
+                <div class="name">
+                    ChatBot
+                </div>
+            </div>
+        </div>
+        <div class="chat-history">
+            <div class="chat-bubble sender">
+                Hello! How can I assist you today?
+            </div>
+            <div class="chat-bubble response">
+                Hi! I need some help with my account
+            </div>
+            <div class="chat-bubble sender">
+                Sure! I'd be happy to help with that!
+            </div>
+        </div>
+        <div class="chat-input">
+            <div class="position-container-chat">
+                <input type="text" placeholder="How can we assist you?">
+                <button class="send-btn"><mat-icon>send</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
+<button mat-fab color="primary" (click)="openChatBot()" class="chat-btn"><mat-icon>chat_bubble</mat-icon></button>
