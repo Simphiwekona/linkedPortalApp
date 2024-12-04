@@ -1,19 +1,25 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.css'
 })
-export class ChatbotComponent {
+export class ChatbotComponent implements OnInit {
 message: string[] = [];
 userInput: string = '';
 toggleChatBot: boolean = false;
 constructor(private http: HttpClient){}
 
+ngOnInit(): void {
+  setTimeout(() => {
+    this.toggleChatBot =true;
+  }, 220000)
+}
+
 openChatBot(){
-  this.toggleChatBot = true
+  this.toggleChatBot = !this.toggleChatBot;
 }
 
 sendMessage() {

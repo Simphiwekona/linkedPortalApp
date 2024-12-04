@@ -1,1 +1,157 @@
+<!-- <nav class="navbar">
+    <div class="nav-brand">
+      <a routerLink="/">MyBrand</a>
+    </div>
+    
+    <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/services">Services</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="home-contain">
+    <app-contact></app-contact>
+  </div>
 <app-chatbot></app-chatbot>
+<app-footer></app-footer> -->
+
+
+
+<!-- Navigation Section -->
+<nav class="navbar" id="navbar">
+  <div class="logo">Logo</div>
+  <div class="nav-links" id="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="/login">Products</a>
+    <a href="#">Contact Us</a>
+  </div>
+  <div class="nav-buttons">
+    <button class="signup-btn" id="signup-button">Signup</button>
+    <button class="login-btn" id="login-button">Login</button>
+  </div>
+  <button class="menu-btn" id="menu-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero">
+  <div class="hero-section">
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/600x400" alt="image" />
+    </div>
+    <div class="text-grid">
+      <p>Your only stop for tech parts</p>
+      <h1>Amazing deals!</h1>
+      <div class="button-container">
+        <button class="contact-btn">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Need Help Section -->
+<section id="needhelp">
+  <div class="grid-container-wrapper">
+    <h1 class="grid-header">Need Help?</h1>
+    <div class="three-column-grid">
+      <div class="grid-element">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel justo vel est fermentum facilisis.</p>
+      </div>
+      <div class="grid-element">
+        <p>Phasellus at nisi hendrerit, tincidunt sapien sit amet, pellentesque tortor. Suspendisse ut arcu at urna.</p>
+      </div>
+      <div class="grid-element">
+        <p>Mauris id libero id urna commodo venenatis in a libero. Nulla facilisi. Fusce vel ex enim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RANGE SECTION -->
+<section id="range">
+  <div class="range-container">
+    <h1 class="range-heading">Our Range</h1>
+    <div class="range-grid">
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product One</p>
+      </div>
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product Two</p>
+      </div>
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product Three</p>
+      </div>
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product Four</p>
+      </div>
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product Five</p>
+      </div>
+      <div class="range-item">
+        <img src="https://via.placeholder.com/200" alt="Product" />
+        <p>Product Six</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW SECTION -->
+<section id="review">
+  <div class="review-section">
+    <div class="review-carousel">
+      <button class="carousel-button prev-button">&#8249;</button>
+      <div class="carousel-container">
+        <div class="carousel-item active">
+          <p class="review-text">"Amazing!"</p>
+          <p class="review-author">- John Doe</p>
+          <div class="rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <p class="review-text">"Amazing!"</p>
+          <p class="review-author">- John Doe</p>
+          <div class="rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-button next-button">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Name" />
+      <input type="email" name="email" placeholder="Email" />
+      <textarea name="message" placeholder="Your message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+</footer>
